@@ -1,3 +1,1 @@
-export default function () {
-  console.log(1)
-}
+export { default as Kagura } from "./core"

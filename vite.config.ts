@@ -8,4 +8,5 @@ export default defineConfig({
       fileName: 'index',
     },
   },
+  root: "./playground",
 })

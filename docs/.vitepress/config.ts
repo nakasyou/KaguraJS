@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "KaguraJS Document",
+  title: "KaguraJS",
   description: "KaguraJS's document site.",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

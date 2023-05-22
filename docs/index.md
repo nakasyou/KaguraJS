@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "KaguraJS Document"
-  text: "KaguraJS's document site."
-  tagline: My great project tagline
+  name: "KaguraJS"
+  text: "KaguraJSは、高速で簡単なWeb-based Game frameworkです。"
+  tagline: KaguraJS is game framework.
   actions:
     - theme: brand
       text: Markdown Examples
@@ -15,11 +15,11 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Type supported
+    details: 強力に片づけされたコード
+  - title: 手軽でも、強力に
+    details: KaguraJSは、Scratchのように手軽ですが、大規模開発もすることができます。
+  - title: Marge other framework
+    details: KaguraJSは、Reactや、Vue.js、Astroなどのフレームワークで利用できます。(できるようにするつもりです)
 ---
 

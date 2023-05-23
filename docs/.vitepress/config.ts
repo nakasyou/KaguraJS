@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import generateSideber from "./generate-sidebar"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -8,18 +9,11 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Guide', link: '/guide' },
+      { text: 'API', link: '/api/modules' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    sidebar: generateSideber(),
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }

@@ -24,3 +24,5 @@ dist-ssr
 
 # Types
 /types/
+
+.vitepress/cache/

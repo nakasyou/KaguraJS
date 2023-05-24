@@ -1,4 +1,4 @@
-[kagurajs](../README.md) / [Exports](../modules.md) / Kagura
+[kagurajs - v0.0.0](../README.md) / [Exports](../modules.md) / Kagura
 
 # Class: Kagura
 
@@ -10,11 +10,14 @@
 
 ### Properties
 
+- [\_fpsdata](Kagura.md#_fpsdata)
 - [element](Kagura.md#element)
 - [size](Kagura.md#size)
+- [start](Kagura.md#start)
 
 ### Accessors
 
+- [fps](Kagura.md#fps)
 - [height](Kagura.md#height)
 - [width](Kagura.md#width)
 
@@ -36,9 +39,25 @@
 
 #### Defined in
 
-[core/index.ts:21](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L21)
+[core/index.ts:27](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L27)
 
 ## Properties
+
+### \_fpsdata
+
+• `Private` **\_fpsdata**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `fps` | `number` |
+
+#### Defined in
+
+[core/index.ts:24](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L24)
+
+___
 
 ### element
 
@@ -46,13 +65,13 @@
 
 #### Defined in
 
-[core/index.ts:16](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L16)
+[core/index.ts:19](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L19)
 
 ___
 
 ### size
 
-• **size**: `Object`
+• `Private` **size**: `Object`
 
 #### Type declaration
 
@@ -63,9 +82,57 @@ ___
 
 #### Defined in
 
-[core/index.ts:17](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L17)
+[core/index.ts:20](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L20)
+
+___
+
+### start
+
+• **start**: () => `void` = `start`
+
+#### Type declaration
+
+▸ (): `void`
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[core/index.ts:87](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L87)
 
 ## Accessors
+
+### fps
+
+• `get` **fps**(): `number`
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+[core/index.ts:83](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L83)
+
+• `set` **fps**(`fps`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fps` | `number` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[core/index.ts:80](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L80)
+
+___
 
 ### height
 
@@ -79,7 +146,7 @@ Return canvas height
 
 #### Defined in
 
-[core/index.ts:54](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L54)
+[core/index.ts:68](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L68)
 
 • `set` **height**(`height`): `void`
 
@@ -95,7 +162,7 @@ Return canvas height
 
 #### Defined in
 
-[core/index.ts:41](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L41)
+[core/index.ts:55](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L55)
 
 ___
 
@@ -111,7 +178,7 @@ Return canvas width
 
 #### Defined in
 
-[core/index.ts:48](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L48)
+[core/index.ts:62](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L62)
 
 • `set` **width**(`width`): `void`
 
@@ -127,7 +194,7 @@ Return canvas width
 
 #### Defined in
 
-[core/index.ts:37](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L37)
+[core/index.ts:51](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L51)
 
 ## Methods
 
@@ -150,4 +217,4 @@ Set canvas size
 
 #### Defined in
 
-[core/index.ts:62](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L62)
+[core/index.ts:76](https://github.com/nakasyou/KaguraJSc/blob/48aa42f/src/core/index.ts#L76)

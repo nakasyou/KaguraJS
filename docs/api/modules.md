@@ -1,6 +1,6 @@
-[kagurajs](README.md) / Exports
+[kagurajs - v0.0.0](README.md) / Exports
 
-# kagurajs
+# kagurajs - v0.0.0
 
 ## Table of contents
 
@@ -8,21 +8,3 @@
 
 - [Kagura](classes/Kagura.md)
 - [Scene](classes/Scene.md)
-
-### Functions
-
-- [c](modules.md#c)
-
-## Functions
-
-### c
-
-▸ **c**(): `void`
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[index.ts:3](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/index.ts#L3)

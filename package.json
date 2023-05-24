@@ -22,8 +22,8 @@
     "lint:fix": "eslint src/**/* --ext .js,.ts --fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "pnpm run typedoc-build && vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "typedoc-build": "typedoc --plugin typedoc-plugin-markdown src/index.ts --out docs/api"
+    "docs:preview": " pnpm run typedoc-build && vitepress preview docs",
+    "typedoc-build": "typedoc --plugin typedoc-plugin-markdown src/index.ts --out docs/api --includeVersion "
   },
   "devDependencies": {
     "dts-bundle": "^0.7.3",

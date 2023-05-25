@@ -16,7 +16,7 @@ export default defineConfig({
     sidebar: generateSideber(),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/nakasyou/KaguraJS' }
     ]
   },
   base: "/KaguraJS",

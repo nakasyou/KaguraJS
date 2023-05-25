@@ -10,11 +10,14 @@
 
 ### Properties
 
+- [\_fpsdata](Kagura.md#_fpsdata)
 - [element](Kagura.md#element)
 - [size](Kagura.md#size)
+- [start](Kagura.md#start)
 
 ### Accessors
 
+- [fps](Kagura.md#fps)
 - [height](Kagura.md#height)
 - [width](Kagura.md#width)
 
@@ -36,9 +39,19 @@
 
 #### Defined in
 
-[core/index.ts:21](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L21)
+core/index.d.ts:17
 
 ## Properties
+
+### \_fpsdata
+
+• `Private` **\_fpsdata**: `any`
+
+#### Defined in
+
+core/index.d.ts:16
+
+___
 
 ### element
 
@@ -46,26 +59,67 @@
 
 #### Defined in
 
-[core/index.ts:16](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L16)
+core/index.d.ts:14
 
 ___
 
 ### size
 
-• **size**: `Object`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `height` | `number` |
-| `width` | `number` |
+• `Private` **size**: `any`
 
 #### Defined in
 
-[core/index.ts:17](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L17)
+core/index.d.ts:15
+
+___
+
+### start
+
+• **start**: () => `void`
+
+#### Type declaration
+
+▸ (): `void`
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+core/index.d.ts:36
 
 ## Accessors
+
+### fps
+
+• `get` **fps**(): `number`
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+core/index.d.ts:35
+
+• `set` **fps**(`fps`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fps` | `number` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+core/index.d.ts:34
+
+___
 
 ### height
 
@@ -79,7 +133,7 @@ Return canvas height
 
 #### Defined in
 
-[core/index.ts:54](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L54)
+core/index.d.ts:27
 
 • `set` **height**(`height`): `void`
 
@@ -95,7 +149,7 @@ Return canvas height
 
 #### Defined in
 
-[core/index.ts:41](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L41)
+core/index.d.ts:19
 
 ___
 
@@ -111,7 +165,7 @@ Return canvas width
 
 #### Defined in
 
-[core/index.ts:48](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L48)
+core/index.d.ts:23
 
 • `set` **width**(`width`): `void`
 
@@ -127,7 +181,7 @@ Return canvas width
 
 #### Defined in
 
-[core/index.ts:37](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L37)
+core/index.d.ts:18
 
 ## Methods
 
@@ -150,4 +204,4 @@ Set canvas size
 
 #### Defined in
 
-[core/index.ts:62](https://github.com/nakasyou/KaguraJSc/blob/d7c72c8/src/core/index.ts#L62)
+core/index.d.ts:33

@@ -23,7 +23,7 @@ Scene class
 
 #### Defined in
 
-[scene/index.ts:5](https://github.com/nakasyou/KaguraJSc/blob/7e4bd0f/src/scene/index.ts#L5)
+[scene/index.ts:5](https://github.com/nakasyou/KaguraJSc/blob/0b152ae/src/scene/index.ts#L5)
 
 ## Methods
 
@@ -37,7 +37,7 @@ Scene class
 
 #### Defined in
 
-[scene/index.ts:11](https://github.com/nakasyou/KaguraJSc/blob/7e4bd0f/src/scene/index.ts#L11)
+[scene/index.ts:11](https://github.com/nakasyou/KaguraJSc/blob/0b152ae/src/scene/index.ts#L11)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[scene/index.ts:8](https://github.com/nakasyou/KaguraJSc/blob/7e4bd0f/src/scene/index.ts#L8)
+[scene/index.ts:8](https://github.com/nakasyou/KaguraJSc/blob/0b152ae/src/scene/index.ts#L8)

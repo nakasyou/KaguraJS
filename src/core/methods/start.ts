@@ -1,8 +1,8 @@
 import Kagura from ".."
 
-/**
- * start KaguraJS instance.
- */
 export default function (this: Kagura){
-
+  setInterval(()=>{
+    this.scene.frame()
+    console.log(0)
+  })
 }

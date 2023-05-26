@@ -1,6 +1,7 @@
 import margeOptions from "merge-options"
 import * as createOptions from "./create-options"
 
+import * as PIXI from 'pixi.js'
 
 import start from "./methods/start"
 
@@ -26,7 +27,7 @@ export default class Kagura{
   #fpsData: Fpsdata
   #scene: Scene
   #sceneData: SceneData
-  
+  pixiApp: PIXI.Application
   constructor(options?: KaguraInitOptions){
     const strictOptions: KaguraInitStrictOptions = margeOptions({
       element: createOptions.createCanvas(),
@@ -59,6 +60,13 @@ export default class Kagura{
       fps: 0,
     }
     this.fps = strictOptions.fps
+
+    // Init pixi.js
+    this.pixiApp = new PIXI.Application({
+      backgroundColor: 0x1099bb,
+      view: this.element,
+    })
+
   }
   set width(width: number){
     this.#size.width = width

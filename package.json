@@ -40,6 +40,7 @@
     "vitepress": "1.0.0-beta.1"
   },
   "dependencies": {
-    "merge-options": "^3.0.4"
+    "merge-options": "^3.0.4",
+    "pixi.js": "^7.2.4"
   }
 }

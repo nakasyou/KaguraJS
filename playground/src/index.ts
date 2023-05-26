@@ -4,8 +4,8 @@ const { range } = utils
 
 class MyScene extends Scene{
   data: Record<string,any> = {}
-  constructor(){
-    super()
+  constructor(options){
+    super(options)
     
     this.data.counter = 0
   }

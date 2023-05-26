@@ -12,7 +12,7 @@
     "esModuleInterop": true,
     "emitDeclarationOnly": true,
     "declaration": true,
-    "declarationDir": "./dist",
+    "declarationDir": "./types",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

@@ -14,9 +14,7 @@ class MyScene extends Scene{
     //console.log("count",this.data.counter)
   }
   *steps(){
-    for(const i of range(100)){
-      yield console.log(i)
-    }
+    yield console.log(this)
   }
 }
 

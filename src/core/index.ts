@@ -8,20 +8,25 @@ import Scene from "../scene"
 
 import type { KaguraInitOptions, KaguraInitStrictOptions } from "./init-types"
 
+export interface Fpsdata {
+  fps: number
+}
+export interface SceneData {
+  steps: AsyncGenerator | Generator
+}
 /**
  * create kagura instance
  */
 export default class Kagura{
   element: HTMLCanvasElement
-  private size: {
+  #size: {
     width: number
     height: number
   }
-  private _fpsdata: {
-    fps: number
-  }
-  scene: Scene
-
+  #fpsData: Fpsdata
+  #scene: Scene
+  #sceneData: SceneData
+  
   constructor(options?: KaguraInitOptions){
     const strictOptions: KaguraInitStrictOptions = margeOptions({
       element: createOptions.createCanvas(),
@@ -32,44 +37,48 @@ export default class Kagura{
     }, options)
 
     // Set scene
-    this.scene = {} as Scene
+    this.#scene = {} as Scene
+    this.#sceneData = {
+      steps: (function*(){})(), // Empty genelator
+    }
     this.setScene(strictOptions.startScene)
+
 
     // Set element
     this.element = strictOptions.element
-
+    
     // Set size
-    this.size = {
+    this.#size = {
       width: strictOptions.width,
       height: strictOptions.height
     }
     this.setCanvasSize(strictOptions.width, strictOptions.height)
 
     // Set fps
-    this._fpsdata = {
+    this.#fpsData = {
       fps: 0,
     }
     this.fps = strictOptions.fps
   }
   set width(width: number){
-    this.size.width = width
+    this.#size.width = width
     this.element.width = width
   } 
   set height(height: number){
-    this.size.height = height
+    this.#size.height = height
     this.element.height = height
   }
   /**
    * Return canvas width
    */
   get width(): number{
-    return this.size.width
+    return this.#size.width
   }
   /**
    * Return canvas height
    */
   get height(): number{
-    return this.size.height
+    return this.#size.height
   }
   /**
    * Set canvas size
@@ -81,10 +90,10 @@ export default class Kagura{
     this.height = height
   }
   set fps(fps: number){
-    this._fpsdata.fps = fps
+    this.#fpsData.fps = fps
   }
   get fps(){
-    return this._fpsdata.fps
+    return this.#fpsData.fps
   }
   /**
    * Start KaguraJS game.
@@ -95,12 +104,16 @@ export default class Kagura{
    * kagura.start()
    * ```
    */
-  start(){
-    console.log("a")
-    start.apply(this)
+  async start(){
+    await start.apply(this, [{
+      scene: this.#scene,
+      fpsData: this.#fpsData,
+      sceneData: this.#sceneData
+    }])
   }
   setScene(NewScene: typeof Scene){
     const scene = new NewScene()
-    this.scene = scene
+    this.#scene = scene
+    this.#sceneData.steps = scene.steps()
   }
 }

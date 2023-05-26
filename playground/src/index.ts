@@ -2,15 +2,15 @@ import { Kagura, Scene } from "../../src"
 
 
 class MyScene extends Scene{
-  data: Record<string,any>
+  data: Record<string,any> = {}
   constructor(){
     super()
     
     this.data.counter = 0
   }
   frame(){
-    this.data.counter++
-    console.log(this.data.counter)
+    this.data.counter =0
+    console.log("count",this.data.counter)
   }
 }
 
@@ -21,4 +21,4 @@ const kagura = new Kagura({
 
 kagura.setCanvasSize(100,100)
 
-kagura.start()
+await kagura.start()

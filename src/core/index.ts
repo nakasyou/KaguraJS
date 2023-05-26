@@ -120,7 +120,9 @@ export default class Kagura{
     }])
   }
   setScene(NewScene: typeof Scene){
-    const scene = new NewScene()
+    const scene = new NewScene({
+      kaguraApp: this,
+    })
     this.#scene = scene
     this.#sceneData.steps = scene.steps()
   }

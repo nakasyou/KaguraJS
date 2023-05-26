@@ -1,6 +1,6 @@
 {
   "name": "kagurajs",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "type": "module",
   "files": [
     "dist",

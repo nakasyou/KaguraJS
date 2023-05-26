@@ -1,5 +1,6 @@
-import { Kagura, Scene } from "../../src"
+import { Kagura, Scene, utils } from "../../src"
 
+const { range } = utils
 
 class MyScene extends Scene{
   data: Record<string,any> = {}
@@ -10,7 +11,12 @@ class MyScene extends Scene{
   }
   frame(){
     this.data.counter =0
-    console.log("count",this.data.counter)
+    //console.log("count",this.data.counter)
+  }
+  *steps(){
+    for(const i of range(100)){
+      yield console.log(i)
+    }
   }
 }
 

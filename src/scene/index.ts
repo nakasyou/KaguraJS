@@ -8,7 +8,7 @@ export default class Scene{
   frame(){
 
   }
-  async *steps(){
-    
+  *steps(): Generator{
+
   }
 }

@@ -7,6 +7,7 @@ export default defineConfig({
       name: 'kagura',
       fileName: 'index',
     },
+    target: 'esnext',
   },
   root: "./playground",
 })

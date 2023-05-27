@@ -9,6 +9,7 @@ export default defineConfig({
       fileName: 'index',
     },
     target: 'esnext',
+    outDir: resolve(__dirname, 'dist'),
   },
   root: "./playground",
 })

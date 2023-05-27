@@ -12,4 +12,12 @@ export default defineConfig({
     outDir: resolve(__dirname, 'dist'),
   },
   root: "./playground",
+  rollupOptions: {
+    external: ['pixijs'],
+    output: {
+      globals: {
+        pixijs: 'PIXI',
+      },
+    },
+  },
 })

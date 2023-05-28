@@ -17,7 +17,7 @@ export default defineConfig({
     external: ['pixi.js'],
     output: {
       globals: {
-        "pixi.js": 'PIXI',
+        'pixi.js': 'PIXI',
       },
     },
   },

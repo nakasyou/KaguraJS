@@ -14,10 +14,10 @@ export default defineConfig({
   },
   root: "./playground",
   rollupOptions: {
-    external: ['pixijs'],
+    external: ['pixi.js'],
     output: {
       globals: {
-        pixijs: 'PIXI',
+        "pixi.js": 'PIXI',
       },
     },
   },

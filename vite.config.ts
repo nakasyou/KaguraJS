@@ -11,14 +11,14 @@ export default defineConfig({
     },
     target: 'esnext',
     outDir: resolve(__dirname, 'dist'),
-  },
-  root: "./playground",
-  rollupOptions: {
-    external: ['pixi.js'],
-    output: {
-      globals: {
-        'pixi.js': 'PIXI',
+    rollupOptions: {
+      external: ['pixi.js',"react"],
+      output: {
+        globals: {
+          'pixi.js': 'PIXI',
+        },
       },
     },
   },
+  root: "./playground",
 })

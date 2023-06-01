@@ -1,4 +1,4 @@
-import Scene from "../scene"
+import Scene from '../scene'
 
 export interface KaguraInitOptions {
   element?: HTMLCanvasElement

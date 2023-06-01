@@ -1,4 +1,4 @@
-import Kagura from "../core"
+import Kagura from '../core'
 
 export interface SceneConstructorOptions {
   kaguraApp: Kagura
@@ -7,15 +7,17 @@ export interface SceneConstructorOptions {
 /**
  * Scene class
  */
-export default class Scene{
+export default class Scene {
   kaguraApp: Kagura
-  constructor(sceneConstructorOptions: SceneConstructorOptions){
+  constructor (sceneConstructorOptions: SceneConstructorOptions) {
     this.kaguraApp = sceneConstructorOptions.kaguraApp
   }
-  frame(){
+
+  frame () {
 
   }
-  *steps(): Generator{
+
+  * steps (): Generator {
 
   }
 }

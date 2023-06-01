@@ -2,15 +2,15 @@ const matchRegex = /\?kagura*$/
 
 /**
  * Plugin kagura(Alpha)
- * @returns 
+ * @returns
  * @alpha
  */
-export function pluginKagura(){
+export function pluginKagura () {
   return {
-    name: "vite-plugin-kagura",
-    //enforce: 'pre',
-    transform(src: string, id: string){
-      if(!matchRegex.test(id)){
+    name: 'vite-plugin-kagura',
+    // enforce: 'pre',
+    transform (src: string, id: string) {
+      if (!matchRegex.test(id)) {
         return
       }
       return {

@@ -1,4 +1,4 @@
-import { Container } from "pixi.js"
+import { Container } from 'pixi.js'
 
 /*
 function getAllProps(object: object) {
@@ -10,13 +10,13 @@ function getAllProps(object: object) {
         p.push(op[i]);
   }
   return p;
-}*/
+} */
 
-class ObjectContainer extends Container{
+class ObjectContainer extends Container {
   childContainer: Container
-  constructor(childContainer: Container){
+  constructor (childContainer: Container) {
     super()
-    
+
     this.childContainer = childContainer
     this.addChild(childContainer)
   }

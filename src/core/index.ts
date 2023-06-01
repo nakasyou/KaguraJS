@@ -66,7 +66,7 @@ export default class Kagura{
       backgroundColor: 0x1099bb,
       view: this.element,
     })
-
+    
   }
   set width(width: number){
     this.#size.width = width

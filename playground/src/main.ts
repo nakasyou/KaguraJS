@@ -1,10 +1,22 @@
-import { Kagura, Scene, utils } from "../../src"
+import {
+  Kagura,
+  Scene,
+  utils,
+  ObjectContainer,
+  type SceneConstructorOptions,
+  Asset,
+} from "../../src"
+import { Container } from "pixi.js"
+
+import gobo from "../assets/gobo.svg"
+
+const oc = new ObjectContainer(new Container())
 
 const { range } = utils
 
 class MyScene extends Scene{
   data: Record<string,any> = {}
-  constructor(options){
+  constructor(options: SceneConstructorOptions){
     super(options)
     
     this.data.counter = 0
@@ -14,7 +26,7 @@ class MyScene extends Scene{
     //console.log("count",this.data.counter)
   }
   *steps(){
-    yield console.log(this)
+    //yield console.log(this)
   }
 }
 

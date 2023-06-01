@@ -1,3 +1,3 @@
 export default function () {
-  return document.createElement("canvas")
+  return document.createElement('canvas')
 }

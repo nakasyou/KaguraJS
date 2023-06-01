@@ -1,2 +1,2 @@
-export { default as ObjectContainer } from "./object-container"
-export * from "./sprite"
+export { default as ObjectContainer } from './object-container'
+export * from './sprite'

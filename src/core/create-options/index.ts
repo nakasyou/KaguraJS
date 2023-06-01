@@ -1,1 +1,1 @@
-export { default as createCanvas } from "./create-canvas"
+export { default as createCanvas } from './create-canvas'

@@ -22,7 +22,7 @@
  *   console.log(i)
  * }
  * ```
- * @params n - Number to stop before that number
+ * @param n - Number to stop before that number
  * @returns A sequential number generator
  */
 export default function * (n: number): Generator<number, void, unknown> {

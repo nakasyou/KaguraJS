@@ -9,7 +9,7 @@ export function pluginKagura () {
   return {
     name: 'vite-plugin-kagura',
     // enforce: 'pre',
-    transform (src: string, id: string) {
+    transform (_src: string, id: string) {
       if (!matchRegex.test(id)) {
         return
       }

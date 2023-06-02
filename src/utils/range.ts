@@ -2,7 +2,7 @@
  * Returns n numbers from 0 to (n-1) in order.
  * @remarks
  * A generator that returns n numbers from 0 to (n-1) in order.
- * ## what does it exist for?
+ * #### what does it exist for?
  * Because doing that would require writing long code.
  * Old: 
  * ```ts

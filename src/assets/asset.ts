@@ -18,8 +18,8 @@ export class Asset {
   }
 
   async fromURL (url: URL | string): Promise<void> {
-    if (typeof url === 'string') {
-      url = new URL(url, window.location.href)
+    if (url instanceof URL) {
+      url = url.toString()
     }
     const res: Response = await fetch(url)
     this.fromResponse(res)

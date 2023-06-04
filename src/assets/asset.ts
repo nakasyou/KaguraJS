@@ -19,7 +19,7 @@ export class Asset {
 
   async fromURL (url: URL | string): Promise<void> {
     if (typeof url === 'string') {
-      url = new URL(url, location.href)
+      url = new URL(url, window.location.href)
     }
     const res: Response = await fetch(url)
     this.fromResponse(res)

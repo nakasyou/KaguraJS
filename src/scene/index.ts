@@ -9,8 +9,17 @@ export interface SceneConstructorOptions {
  */
 export default class Scene {
   kaguraApp: Kagura
-  constructor (sceneConstructorOptions: SceneConstructorOptions) {
-    this.kaguraApp = sceneConstructorOptions.kaguraApp
+  constructor (sceneConstructorOptions: SceneConstructorOptions, callback: ()=>void) {
+    this.kaguraApp = sceneConstructorOptions.kaguraApp;
+    (async () => {
+      await this.init()
+
+      callback()
+    })()
+  }
+
+  init (): void | Promise<void> {
+
   }
 
   frame () {

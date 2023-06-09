@@ -127,11 +127,13 @@ export default class Kagura {
     }])
   }
 
-  setScene (NewScene: typeof Scene) {
-    const scene = new NewScene({
-      kaguraApp: this
+  setScene (NewScene: typeof Scene): Promise<void> {
+    return new Promise((resolve) => {
+      const scene = new NewScene({
+        kaguraApp: this
+      }, resolve)
+      this.#scene = scene
+      this.#sceneData.steps = scene.steps()
     })
-    this.#scene = scene
-    this.#sceneData.steps = scene.steps()
   }
 }

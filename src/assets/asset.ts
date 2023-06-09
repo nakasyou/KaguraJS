@@ -1,3 +1,6 @@
+import * as PIXI from 'pixi.js'
+import { blob2dataurl } from './blob2dataurl'
+
 export class Asset {
   #blobData: Blob
   #blobURL: URL
@@ -12,24 +15,46 @@ export class Asset {
    * Load asset from Blob.
    * @param blob Load blob Object
    */
-  fromBlob (blob: Blob): void {
+  fromBlob (blob: Blob): Asset {
     this.#blobData = blob
     this.#blobURL = new URL(URL.createObjectURL(blob))
+
+    return this
   }
 
-  async fromURL (url: URL | string): Promise<void> {
+  async fromURL (url: URL | string): Promise<Asset> {
     if (url instanceof URL) {
       url = url.toString()
     }
     const res: Response = await fetch(url)
-    this.fromResponse(res)
+    await this.fromResponse(res)
+    return this
   }
 
-  async fromResponse (response: Response): Promise<void> {
+  async fromResponse (response: Response): Promise<Asset> {
     this.fromBlob(await response.blob())
+
+    return this
   }
 
-  get url () {
+  /**
+   * Returns asset's URL.
+   * @returns A asset's URL
+   */
+  get url (): URL {
     return this.#blobURL
+  }
+
+  get blob (): Blob {
+    return this.#blobData
+  }
+
+  /**
+   * Get PixiJS AssetsClass
+   * @returns PIXI.AssetsClas
+   */
+  async getPixiAssets (): Promise<PIXI.AssetsClass> {
+    const dataurl = await blob2dataurl(this.blob)
+    return await PIXI.Assets.load(dataurl)
   }
 }

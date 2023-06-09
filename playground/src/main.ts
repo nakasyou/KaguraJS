@@ -1,24 +1,18 @@
 import {
   Kagura,
   Scene,
-  utils,
-  ObjectContainer,
-  type SceneConstructorOptions,
   Asset,
 } from "../../src"
-import { Container } from "pixi.js"
+import * as PIXI from "pixi.js"
 
 import gobo from "../assets/gobo.svg"
 
-const oc = new ObjectContainer(new Container())
-
-const { range } = utils
 
 class MyScene extends Scene{
   data: Record<string,any> = {}
-  constructor(options: SceneConstructorOptions){
-    super(options)
-    
+  async init(){
+    const goboImage = await new Asset().fromURL(gobo)
+    console.log(await goboImage.getPixiAssets())
     this.data.counter = 0
   }
   frame(){

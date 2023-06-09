@@ -4,7 +4,7 @@
  * A generator that returns n numbers from 0 to (n-1) in order.
  * #### what does it exist for?
  * Because doing that would require writing long code.
- * Old: 
+ * Old:
  * ```ts
  * for(let i = 0; i < 10; i++){
  *   console.log(`Count is ${i}.`)

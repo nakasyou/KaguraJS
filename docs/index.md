@@ -8,11 +8,11 @@ hero:
   tagline: "KaguraJSは、高速で簡単なWeb-based Game frameworkです。"
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: GET STARTED
+      link: /guide
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: API Documentation
+      link: /api
 
 features:
   - title: Type supported

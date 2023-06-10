@@ -12,7 +12,7 @@ hero:
       link: /guide
     - theme: alt
       text: API Documentation
-      link: /api
+      link: /api/modules.html
 
 features:
   - title: Type supported

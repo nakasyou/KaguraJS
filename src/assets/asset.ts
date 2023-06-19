@@ -1,6 +1,31 @@
 import * as PIXI from 'pixi.js'
 import { blob2dataurl } from './blob2dataurl'
 
+/**
+ * Kagura asset class.
+ * @remarks
+ * It is KaguraJS asset class.
+ * It does manage game asset.  
+ * import:
+ * ```ts
+ * import { Asset } from "kagurajs"
+ * ```
+ * @example
+ * ```ts
+ * // On Vite
+ * import { Asset } from "kagurajs"
+ * import cat from "./assets/cat.png"
+ * 
+ * const catAsset = new Asset().fromURL(cat) // Load asset via Vite import.
+ * ```
+ * @example
+ * ```ts
+ * // Not use esm
+ * const { Asset } = kagura
+ * 
+ * const catAsset = new Asset().fromURL("/assets/cat.png") // Load asset via raw URL.
+ * ```
+ */
 export class Asset {
   #blobData: Blob
   #blobURL: URL
@@ -21,7 +46,13 @@ export class Asset {
 
     return this
   }
-
+  /**
+   * Load asset from URL.
+   * @example
+   * ```ts
+   * const assets = new Asset().fromURL(url)
+   * ```
+   */
   async fromURL (url: URL | string): Promise<Asset> {
     if (url instanceof URL) {
       url = url.toString()

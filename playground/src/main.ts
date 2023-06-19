@@ -2,6 +2,7 @@ import {
   Kagura,
   Scene,
   Asset,
+  Sprite
 } from "../../src"
 import * as PIXI from "pixi.js"
 
@@ -12,8 +13,12 @@ class MyScene extends Scene{
   data: Record<string,any> = {}
   async init(){
     const goboImage = await new Asset().fromURL(gobo)
-    console.log(await goboImage.getPixiAssets())
+    const goboSprite = await new Sprite().init({
+      asset: goboImage
+    })
     this.data.counter = 0
+
+    this.kaguraApp.pixiApp.stage.addChild(goboSprite)
   }
   frame(){
     this.data.counter =0

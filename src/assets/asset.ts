@@ -49,12 +49,12 @@ export class Asset {
     return this.#blobData
   }
 
-  /**
-   * Get PixiJS AssetsClass
-   * @returns PIXI.AssetsClas
-   */
-  async getPixiAssets (): Promise<PIXI.AssetsClass> {
-    const dataurl = await blob2dataurl(this.blob)
-    return await PIXI.Assets.load(dataurl)
+  async getDataUrl (): Promise<string> {
+    return await blob2dataurl(this.blob)
+  }
+
+  async getPixiTexure () : Promise<PIXI.Texture<PIXI.Resource>> {
+    const result = PIXI.Texture.from(this.url.toString())
+    return result
   }
 }

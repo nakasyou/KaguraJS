@@ -14,9 +14,13 @@ function getAllProps(object: object) {
 
 class ObjectContainer extends Container {
   childContainer: Container
-  constructor (childContainer: Container) {
+  constructor () {
     super()
 
+    this.childContainer = {} as Container
+  }
+
+  from (childContainer: Container) {
     this.childContainer = childContainer
     this.addChild(childContainer)
   }

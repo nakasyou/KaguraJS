@@ -26,4 +26,4 @@ dist-ssr
 /types/
 
 .vitepress/cache/
-/docs/api
+/docs/api/

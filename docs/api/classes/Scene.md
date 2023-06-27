@@ -1,4 +1,4 @@
-[kagurajs - v0.0.0](../README.md) / [Exports](../modules.md) / Scene
+[kagurajs - v0.2.5](../README.md) / [Exports](../modules.md) / Scene
 
 # Class: Scene
 
@@ -10,26 +10,68 @@ Scene class
 
 - [constructor](Scene.md#constructor)
 
+### Properties
+
+- [#pixiContainer](Scene.md##pixicontainer)
+- [kaguraApp](Scene.md#kaguraapp)
+
 ### Methods
 
-- [\_callFrame](Scene.md#_callframe)
+- [addChild](Scene.md#addchild)
 - [frame](Scene.md#frame)
+- [init](Scene.md#init)
+- [steps](Scene.md#steps)
 
 ## Constructors
 
 ### constructor
 
-• **new Scene**()
+• **new Scene**(`sceneConstructorOptions`, `callback`)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `sceneConstructorOptions` | [`SceneConstructorOptions`](../interfaces/SceneConstructorOptions.md) |
+| `callback` | () => `void` |
 
 #### Defined in
 
-[scene/index.ts:5](https://github.com/nakasyou/KaguraJSc/blob/a28913e/src/scene/index.ts#L5)
+[src/scene/index.ts:16](https://github.com/nakasyou/KaguraJSc/blob/863df6f/src/scene/index.ts#L16)
+
+## Properties
+
+### #pixiContainer
+
+• `Private` **#pixiContainer**: `Container`<`DisplayObject`\>
+
+#### Defined in
+
+[src/scene/index.ts:15](https://github.com/nakasyou/KaguraJSc/blob/863df6f/src/scene/index.ts#L15)
+
+___
+
+### kaguraApp
+
+• **kaguraApp**: [`Kagura`](Kagura.md)
+
+#### Defined in
+
+[src/scene/index.ts:14](https://github.com/nakasyou/KaguraJSc/blob/863df6f/src/scene/index.ts#L14)
 
 ## Methods
 
-### \_callFrame
+### addChild
 
-▸ **_callFrame**(): `void`
+▸ **addChild**(`object`): `void`
+
+Child appends this scene.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `object` | [`ObjectContainer`](ObjectContainer.md) | ObjectContainer Object. |
 
 #### Returns
 
@@ -37,7 +79,7 @@ Scene class
 
 #### Defined in
 
-[scene/index.ts:11](https://github.com/nakasyou/KaguraJSc/blob/a28913e/src/scene/index.ts#L11)
+[src/scene/index.ts:47](https://github.com/nakasyou/KaguraJSc/blob/863df6f/src/scene/index.ts#L47)
 
 ___
 
@@ -51,4 +93,32 @@ ___
 
 #### Defined in
 
-[scene/index.ts:8](https://github.com/nakasyou/KaguraJSc/blob/a28913e/src/scene/index.ts#L8)
+[src/scene/index.ts:35](https://github.com/nakasyou/KaguraJSc/blob/863df6f/src/scene/index.ts#L35)
+
+___
+
+### init
+
+▸ **init**(): `void` \| `Promise`<`void`\>
+
+#### Returns
+
+`void` \| `Promise`<`void`\>
+
+#### Defined in
+
+[src/scene/index.ts:31](https://github.com/nakasyou/KaguraJSc/blob/863df6f/src/scene/index.ts#L31)
+
+___
+
+### steps
+
+▸ **steps**(): `Generator`<`unknown`, `any`, `unknown`\>
+
+#### Returns
+
+`Generator`<`unknown`, `any`, `unknown`\>
+
+#### Defined in
+
+[src/scene/index.ts:39](https://github.com/nakasyou/KaguraJSc/blob/863df6f/src/scene/index.ts#L39)

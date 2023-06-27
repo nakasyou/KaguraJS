@@ -1,5 +1,8 @@
 import Kagura from '../core'
-import { DisplayObject } from 'pixi.js'
+import {
+  Container
+} from 'pixi.js'
+import { ObjectContainer } from '../object'
 export interface SceneConstructorOptions {
   kaguraApp: Kagura
 }
@@ -9,12 +12,13 @@ export interface SceneConstructorOptions {
  */
 export default class Scene {
   kaguraApp: Kagura
-  children: DisplayObject[]
+  #pixiContainer: Container
   constructor (sceneConstructorOptions: SceneConstructorOptions, callback: ()=>void) {
     this.kaguraApp = sceneConstructorOptions.kaguraApp
-    this.children = []
 
-    // this.kaguraApp.pixiApp.stage.children = this.children
+    this.#pixiContainer = new Container()
+
+    this.kaguraApp.pixiApp.stage.addChild(this.#pixiContainer)
 
     const initReturn = this.init()
     if (initReturn instanceof Promise) {
@@ -34,5 +38,13 @@ export default class Scene {
 
   * steps (): Generator {
 
+  }
+
+  /**
+   * Child appends this scene.
+   * @param object ObjectContainer Object.
+   */
+  addChild (object: ObjectContainer): void {
+    this.#pixiContainer.addChild(object)
   }
 }

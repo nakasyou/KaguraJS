@@ -41,13 +41,6 @@ export default class Kagura {
 
     this.#startWaitPromises = []
 
-    // Set scene
-    this.#scene = {} as Scene
-    this.#sceneData = {
-      steps: (function * () {})() // Empty genelator
-    }
-    this.#startWaitPromises.push(this.setScene(strictOptions.startScene))
-
     // Set element
     this.element = strictOptions.element
 
@@ -69,6 +62,13 @@ export default class Kagura {
       backgroundColor: 0x1099bb,
       view: this.element
     })
+
+    // Set scene
+    this.#scene = {} as Scene
+    this.#sceneData = {
+      steps: (function * () {})() // Empty genelator
+    }
+    this.#startWaitPromises.push(this.setScene(strictOptions.startScene))
   }
 
   set width (width: number) {

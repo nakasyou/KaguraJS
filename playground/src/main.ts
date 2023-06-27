@@ -20,7 +20,8 @@ class MyScene extends Scene{
     })
     this.gobo.x = 100
     
-    this.kaguraApp.pixiApp.stage.addChild(this.gobo)
+    //this.kaguraApp.pixiApp.stage.addChild(this.gobo)
+    this.addChild(this.gobo)
   }
   frame(){
 

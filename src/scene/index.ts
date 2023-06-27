@@ -14,7 +14,7 @@ export default class Scene {
     this.kaguraApp = sceneConstructorOptions.kaguraApp
     this.children = []
 
-    this.kaguraApp.pixiApp.stage.children = this.children
+    // this.kaguraApp.pixiApp.stage.children = this.children
 
     const initReturn = this.init()
     if (initReturn instanceof Promise) {

@@ -18,9 +18,9 @@ class MyScene extends Scene{
     this.gobo = await new Sprite().init({
       asset: goboImage
     })
-    this.gobo.x = 1000
+    this.gobo.x = 100
+    
     this.kaguraApp.pixiApp.stage.addChild(this.gobo)
-    this.speed = -30
   }
   frame(){
 

@@ -29,6 +29,7 @@ export default class Kagura {
   #scene: Scene
   #sceneData: SceneData
   pixiApp: PIXI.Application
+  #startWaitPromises: Promise<any>[]
   constructor (options?: KaguraInitOptions) {
     const strictOptions: KaguraInitStrictOptions = margeOptions({
       element: createOptions.createCanvas(),
@@ -38,12 +39,14 @@ export default class Kagura {
       startScene: Scene
     }, options)
 
+    this.#startWaitPromises = []
+
     // Set scene
     this.#scene = {} as Scene
     this.#sceneData = {
       steps: (function * () {})() // Empty genelator
     }
-    this.setScene(strictOptions.startScene)
+    this.#startWaitPromises.push(this.setScene(strictOptions.startScene))
 
     // Set element
     this.element = strictOptions.element
@@ -120,6 +123,7 @@ export default class Kagura {
    * ```
    */
   async start () {
+    await Promise.all(this.#startWaitPromises)
     await start.apply(this, [{
       scene: this.#scene,
       fpsData: this.#fpsData,
@@ -131,9 +135,11 @@ export default class Kagura {
     return new Promise((resolve) => {
       const scene = new NewScene({
         kaguraApp: this
-      }, resolve)
-      this.#scene = scene
-      this.#sceneData.steps = scene.steps()
+      }, () => {
+        this.#scene = scene
+        this.#sceneData.steps = scene.steps()
+        resolve()
+      })
     })
   }
 }

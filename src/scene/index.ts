@@ -32,7 +32,7 @@ export default class Scene {
 
   }
 
-  frame () {
+  frame (): void | Promise<void> {
 
   }
 
@@ -46,5 +46,16 @@ export default class Scene {
    */
   addChild (object: ObjectContainer): void {
     this.#pixiContainer.addChild(object)
+  }
+
+  async nextScene (NewScene: typeof Scene) {
+    await this.kaguraApp.setScene(NewScene)
+  }
+
+  /**
+   * Crean this Scene.
+   */
+  cleanScene () {
+    this.kaguraApp.pixiApp.stage.removeChildren(0)
   }
 }

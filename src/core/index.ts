@@ -3,7 +3,7 @@ import * as createOptions from './create-options'
 
 import * as PIXI from 'pixi.js'
 
-import start from './methods/start'
+import start, { StartDatas, StartReturn } from './methods/start'
 
 import Scene from '../scene'
 
@@ -26,10 +26,12 @@ export default class Kagura {
   }
 
   #fpsData: Fpsdata
-  #scene: Scene
+  #scene?: Scene
   #sceneData: SceneData
   pixiApp: PIXI.Application
   #startWaitPromises: Promise<any>[]
+  #startReturn: StartReturn
+  #startDatas: StartDatas
   constructor (options?: KaguraInitOptions) {
     const strictOptions: KaguraInitStrictOptions = margeOptions({
       element: createOptions.createCanvas(),
@@ -69,6 +71,11 @@ export default class Kagura {
       steps: (function * () {})() // Empty genelator
     }
     this.#startWaitPromises.push(this.setScene(strictOptions.startScene))
+
+    // Set start return
+    this.#startReturn = {} as StartReturn
+    // Set start datas
+    this.#startDatas = {} as StartDatas
   }
 
   set width (width: number) {
@@ -122,24 +129,64 @@ export default class Kagura {
    * kagura.start()
    * ```
    */
-  async start () {
+  async start (): Promise<StartReturn> {
     await Promise.all(this.#startWaitPromises)
-    await start.apply(this, [{
-      scene: this.#scene,
-      fpsData: this.#fpsData,
-      sceneData: this.#sceneData
-    }])
+
+    this.resetStartDatas() // Reset this.#startDatas
+
+    const startReturn = await start.apply(this, [this.#startDatas])
+    this.#startReturn = startReturn
+    return startReturn
   }
 
   setScene (NewScene: typeof Scene): Promise<void> {
     return new Promise((resolve) => {
+      if (this.#scene?.cleanScene) {
+        this.#scene?.cleanScene() // Crean old scene
+      }
       const scene = new NewScene({
         kaguraApp: this
       }, () => {
         this.#scene = scene
         this.#sceneData.steps = scene.steps()
+        this.resetStartDatas()
         resolve()
       })
     })
+  }
+
+  /**
+   * Stop KaguraJS instance.
+   */
+  async stop () {
+    if (Object.is(window, this)) {
+      throw new TypeError('The "this" object is window object. Try "kagura.stop.bind(kagura)"')
+    }
+    if (this.#startReturn.stop) {
+      this.#startReturn.stop()
+    } else {
+      throw new TypeError('This Kagura instance is not started.')
+    }
+    await this.#startReturn.stop()
+  }
+
+  /**
+   * Restart KaguraJS instance.
+   * @remarks
+   * It is equivalent to this code👇
+   * ```
+   * await kagura.stop()
+   * await kaguta.start()
+   * ```
+   */
+  async restart (): Promise<StartReturn> {
+    await this.stop()
+    return await this.start()
+  }
+
+  resetStartDatas () {
+    this.#startDatas.scene = this.#scene
+    this.#startDatas.fpsData = this.#fpsData
+    this.#startDatas.sceneData = this.#sceneData
   }
 }

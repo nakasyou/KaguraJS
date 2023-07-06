@@ -5,6 +5,7 @@ import {
 import { ObjectContainer } from '../object'
 export interface SceneConstructorOptions {
   kaguraApp: Kagura
+  callback: ()=>void
 }
 
 /**
@@ -13,7 +14,7 @@ export interface SceneConstructorOptions {
 export default class Scene {
   kaguraApp: Kagura
   #pixiContainer: Container
-  constructor (sceneConstructorOptions: SceneConstructorOptions, callback: ()=>void) {
+  constructor (sceneConstructorOptions: SceneConstructorOptions) {
     this.kaguraApp = sceneConstructorOptions.kaguraApp
 
     this.#pixiContainer = new Container()
@@ -22,9 +23,9 @@ export default class Scene {
 
     const initReturn = this.init()
     if (initReturn instanceof Promise) {
-      initReturn.then(callback)
+      initReturn.then(sceneConstructorOptions.callback)
     } else {
-      callback()
+      sceneConstructorOptions.callback()
     }
   }
 

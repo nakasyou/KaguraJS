@@ -145,12 +145,13 @@ export default class Kagura {
         this.#scene?.cleanScene() // Crean old scene
       }
       const scene = new NewScene({
-        kaguraApp: this
-      }, () => {
-        this.#scene = scene
-        this.#sceneData.steps = scene.steps()
-        this.resetStartDatas()
-        resolve()
+        kaguraApp: this,
+        callback: () => {
+          this.#scene = scene
+          this.#sceneData.steps = scene.steps()
+          this.resetStartDatas()
+          resolve()
+        }
       })
     })
   }

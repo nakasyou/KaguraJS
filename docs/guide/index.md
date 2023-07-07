@@ -1,8 +1,20 @@
 # KaguraJS Guide
 ## インストール
+:::tabs
+== npm
 ```bash
-pnpm add kagurajs
+npm install kagurajs
 ```
+== yarn
+```bash
+yarn ads kagurajs
+```
+== pnpm
+```bash
+pnpm i kagurajs
+```
+:::
+
 ## 使用方法
 ```ts
 import {

@@ -42,8 +42,7 @@
     "typedoc-plugin-markdown": "^3.15.3",
     "typescript": "^4.9.4",
     "vite": "^4.0.4",
-    "vitepress": "1.0.0-beta.1",
-    "vitepress-plugin-tabs": "^0.3.0"
+    "vitepress": "1.0.0-beta.1"
   },
   "dependencies": {
     "merge-options": "^3.0.4",

@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress'
 import generateSideber from "./generate-sidebar"
-import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -21,9 +20,4 @@ export default defineConfig({
     ]
   },
   base: "/KaguraJS",
-  markdown: {
-    config(md) {
-      md.use(tabsMarkdownPlugin)
-    },
-  },
 })

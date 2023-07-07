@@ -1,38 +1,56 @@
-# KaguraJS Guide
-## インストール
+# はじめに
+## 概要
+Kagura (日本語で、「神楽」。日本の神道の歌舞の一種。`/kagura/`と発音) は、Web技術のもとで、ゲームを作れる JavaScript フレームワークです。一般的な HTML/JS を土台にしている、シーンベースのゲームプログラミングを提供します。
 
-:::tabs
-== tab a
-a content
-== tab b
-b content
-:::
-
-## 使用方法
+最小限のサンプルを書きます:
 ```ts
-import {
-  Kagura,
-  Scene
-} from "kagurajs"
+import { Kagura, Sprite, Scene, Asset, type SceneConstructorOptions } from "kagurajs"
 
 class MyScene extends Scene{
-  counter: number
-  constructor(){
-    super() // 親クラス初期化
-    
-    this.counter = 0
+  gobo: Sprite
+  speed?: number
+  constructor (sceneConstructorOptions: SceneConstructorOptions) {
+    super(sceneConstructorOptions)
+    this.gobo = {} as Sprite
   }
-  frame(){
-    this.counter ++
-    console.log(this.counter)
+  async init(){
+    this.gobo = await new Sprite().init({
+      asset: await new Asset().fromURL("./gobo.svg")
+    })
+    this.gobo.x = 100
+    this.addChild(this.gobo)
+  }
+  async frame(){
+    this.gobo.x ++
   }
 }
+
 const kagura = new Kagura({
+  element: document.getElementById("game") as HTMLCanvasElement,
   startScene: MyScene,
 })
-
-document.body.append(kagura.element) // Canvasの追加
-
-kagura.start() // Start
+await kagura.start()
 ```
-実行すると、1/60秒ごとに、カウンターが更新され、コンソールに表示されるはずです。
+KaguraJSはまだアルファ版であり、まともに使えない場合があります。また、急な仕様変更があったり、このドキュメントが古い場合があります。その点にご注意ください。
+## インストール
+KaguraJSは、npmに公開されています。そのため、npmからインストールすることができます。
+
+npm:
+```bash
+npm i kagurajs
+```
+yarn:
+```bash
+yarn add kagurajs
+```
+pnpm:
+```bash
+pnpm add kagurajs
+```
+
+また、CDNを使用することもできます。以下の `<script>` タグは、 [jsDelivr](https://jsdlivr.com) を使用しています。CDNの場合、グローバル変数の `kagura` に KaguraJS のモジュールが格納されます。
+```html
+<script src="https://cdn.jsdelivr.net/npm/kagurajs"></script>
+```
+
+将来は、自分でインストールをせずにプロジェクトを開始できる方法を提供する予定です。

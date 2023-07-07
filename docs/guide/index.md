@@ -1,18 +1,11 @@
 # KaguraJS Guide
 ## インストール
+
 :::tabs
-== npm
-```bash
-npm install kagurajs
-```
-== yarn
-```bash
-yarn ads kagurajs
-```
-== pnpm
-```bash
-pnpm i kagurajs
-```
+== tab a
+a content
+== tab b
+b content
 :::
 
 ## 使用方法

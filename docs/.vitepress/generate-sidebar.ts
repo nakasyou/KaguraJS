@@ -5,7 +5,7 @@ export default function(){
         text: "Guide",
         items: [
           { text: "はじめに", link: "/guide/" },
-          { text: "くらべる", link: "/comparisons/" },
+          { text: "くらべる", link: "/guide/comparisons/" },
         ]
       }
     ]

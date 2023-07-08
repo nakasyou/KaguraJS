@@ -1,5 +1,12 @@
 export default function(){
-  return [
-    
-  ]
+  return {
+    '/guide/': [
+      {
+        text: "Guide",
+        items: [
+          { text: "はじめに", link: "/guide/" }
+        ]
+      }
+    ]
+  }
 }

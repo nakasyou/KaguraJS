@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/nakasyou/KaguraJS.old/main/assets/KaguraJS-logo.svg" alt="KaguraJS Logo">
+  <img src="./assets/logo.svg" alt="KaguraJS">
 </div>
 
 ![Contributors](https://img.shields.io/github/contributors/nakasyou/KaguraJS?logo=github&style=for-the-badge)

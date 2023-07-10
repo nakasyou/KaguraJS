@@ -32,25 +32,7 @@ const kagura = new Kagura({
 await kagura.start()
 ```
 KaguraJSはまだアルファ版であり、まともに使えない場合があります。また、急な仕様変更があったり、このドキュメントが古い場合があります。その点にご注意ください。
-## インストール
-KaguraJSは、npmに公開されています。そのため、npmからインストールすることができます。
+## 始め方
+[始め方](using)へ移動
 
-npm:
-```bash
-npm i kagurajs
-```
-yarn:
-```bash
-yarn add kagurajs
-```
-pnpm:
-```bash
-pnpm add kagurajs
-```
-
-また、CDNを使用することもできます。以下の `<script>` タグは、 [jsDelivr](https://jsdlivr.com) を使用しています。CDNの場合、グローバル変数の `kagura` に KaguraJS のモジュールが格納されます。
-```html
-<script src="https://cdn.jsdelivr.net/npm/kagurajs"></script>
-```
-
-将来は、自分でインストールをせずにプロジェクトを開始できる方法を提供する予定です。
+~~将来は、自分でインストールをせずにプロジェクトを開始できる方法を提供する予定です。~~ 実装しました。

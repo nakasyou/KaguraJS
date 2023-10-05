@@ -5,7 +5,7 @@ import { blob2dataurl } from './blob2dataurl'
  * Kagura asset class.
  * @remarks
  * It is KaguraJS asset class.
- * It does manage game asset.  
+ * It does manage game asset.
  * import:
  * ```ts
  * import { Asset } from "kagurajs"
@@ -15,14 +15,14 @@ import { blob2dataurl } from './blob2dataurl'
  * // On Vite
  * import { Asset } from "kagurajs"
  * import cat from "./assets/cat.png"
- * 
+ *
  * const catAsset = new Asset().fromURL(cat) // Load asset via Vite import.
  * ```
  * @example
  * ```ts
  * // Not use esm
  * const { Asset } = kagura
- * 
+ *
  * const catAsset = new Asset().fromURL("/assets/cat.png") // Load asset via raw URL.
  * ```
  */
@@ -46,6 +46,7 @@ export class Asset {
 
     return this
   }
+
   /**
    * Load asset from URL.
    * @example

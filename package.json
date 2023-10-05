@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc && node type-to-dist.js",
-    "lint": "eslint src/**/* playground/**/* --ext .js,.ts",
+    "lint": "eslint src/**/* --ext .js,.ts",
     "lint:fix": "eslint src/**/* --ext .js,.ts --fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "pnpm run typedoc-build && vitepress build docs",

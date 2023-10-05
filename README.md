@@ -19,3 +19,12 @@ KaguraJS is game framework in Web.
 - KaguraJSは、Web上で動作します。
 - KaguraJSは、React/Vue.js/Astroなどのフレームワークで利用できます。
 - KaguraJSは、ECMAScript Modulesで、ファイル分割を実現します。
+## 開発
+Install deps:
+```shell
+bun i
+```
+Develop:
+```shell
+bun run dev
+```
